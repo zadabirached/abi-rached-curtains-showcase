@@ -40,11 +40,11 @@ const ContactSection = () => {
               </p>
               <p>
                 <span className="text-foreground font-medium">Email:</span>{" "}
-                info@abirachedcurtains.com
+                info@komach.com
               </p>
               <p>
                 <span className="text-foreground font-medium">Location:</span>{" "}
-                Jounieh, Mount Lebanon
+                Wadi Chahrour, Mount Lebanon
               </p>
               <p>
                 <span className="text-foreground font-medium">Hours:</span>{" "}

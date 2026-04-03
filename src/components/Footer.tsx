@@ -5,10 +5,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-serif text-lg text-primary-foreground">
-              Abi Rached <span className="font-light opacity-70">Curtains</span>
+              Komach
             </p>
             <p className="font-sans text-xs text-primary-foreground/50 mt-1">
-              Custom curtains since 1994 · Jounieh, Lebanon
+              Custom curtains since 1994 · Wadi Chahrour, Lebanon
             </p>
           </div>
           <div className="flex items-center gap-8">
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-primary-foreground/10 mt-8 pt-6 text-center">
           <p className="font-sans text-xs text-primary-foreground/30">
-            © {new Date().getFullYear()} Abi Rached Curtains. All rights reserved.
+            © {new Date().getFullYear()} Komach. All rights reserved.
           </p>
         </div>
       </div>

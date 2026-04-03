@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    quote: "We renovated our entire apartment and the curtains were the last thing we did. Mr. Abi Rached came personally, took measurements, and helped us choose fabrics that matched our furniture. The result was better than what the interior designer suggested.",
+    quote: "We renovated our entire apartment and the curtains were the last thing we did. The Komach team came personally, took measurements, and helped us choose fabrics that matched our furniture. The result was better than what the interior designer suggested.",
     name: "Nadia K.",
     location: "Achrafieh, Beirut",
   },
