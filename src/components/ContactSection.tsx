@@ -44,7 +44,7 @@ const ContactSection = () => {
               </p>
               <p>
                 <span className="text-foreground font-medium">Location:</span>{" "}
-                Jounieh, Mount Lebanon
+                Wadi Chahrour, Mount Lebanon
               </p>
               <p>
                 <span className="text-foreground font-medium">Hours:</span>{" "}

@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-primary-foreground/10 mt-8 pt-6 text-center">
           <p className="font-sans text-xs text-primary-foreground/30">
-            © {new Date().getFullYear()} Abi Rached Curtains. All rights reserved.
+            © {new Date().getFullYear()} Komach. All rights reserved.
           </p>
         </div>
       </div>

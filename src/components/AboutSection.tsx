@@ -11,7 +11,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-12 h-px bg-accent mx-auto mb-8" />
           <p className="font-sans text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-            Abi Rached Curtains started in the early 1990s as a small workshop in Lebanon. What began as one man's dedication to fabric and finish has grown into a trusted name across the country. For over 30 years, we've worked with homeowners, architects, and interior designers — always hands-on, always attentive.
+            Komach started in the early 1990s as a small workshop in Wadi Chahrour. What began as one man's dedication to fabric and finish has grown into a trusted name across the country. For over 30 years, we've worked with homeowners, architects, and interior designers — always hands-on, always attentive.
           </p>
           <p className="font-sans text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
             We still do things the way they should be done: we visit your home, take exact measurements, discuss your preferences in person, and make sure every panel hangs exactly right. Our workshop handles everything — cutting, sewing, finishing, and installation.

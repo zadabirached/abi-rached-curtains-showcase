@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
         <a href="#home" className="font-serif text-xl md:text-2xl tracking-wide text-foreground">
-          Abi Rached <span className="text-muted-foreground font-light">Curtains</span>
+          Komach
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
