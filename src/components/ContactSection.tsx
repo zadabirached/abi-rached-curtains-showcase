@@ -40,7 +40,7 @@ const ContactSection = () => {
               </p>
               <p>
                 <span className="text-foreground font-medium">Email:</span>{" "}
-                info@abirachedcurtains.com
+                info@komach.com
               </p>
               <p>
                 <span className="text-foreground font-medium">Location:</span>{" "}
