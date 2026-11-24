@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import greenCurtainVideo from "@/assets/komach_green_curtain.mp4.asset.json";
+import greenCurtainPoster from "@/assets/komach_green_curtain_poster.jpg.asset.json";
 import pleatedRoman from "@/assets/komach_pleated_roman.jpg.asset.json";
 import sheerWave from "@/assets/komach_sheer_wave.jpg.asset.json";
 import coastalRoller from "@/assets/komach_coastal_roller.jpg.asset.json";
@@ -22,8 +24,11 @@ const projects = [
   { src: portiereDrapes.url, alt: "Classical doorway portière drapes with bullion fringe under a gilded cornice", label: "Carved Cornice & Portière" },
 ];
 
+type LightboxItem = { type: "photo"; index: number } | { type: "video" } | null;
+
 const PortfolioSection = () => {
-  const [lightbox, setLightbox] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<LightboxItem>(null);
+  const activePhoto = lightbox?.type === "photo" ? projects[lightbox.index] : undefined;
 
   return (
     <section id="portfolio" className="py-20 md:py-28 bg-background">
@@ -37,11 +42,48 @@ const PortfolioSection = () => {
           </h2>
         </div>
 
+        <div className="max-w-5xl mx-auto mb-12 md:mb-16 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+          <button
+            type="button"
+            onClick={() => setLightbox({ type: "video" })}
+            aria-label="View double-height green sheer curtain video full screen"
+            className="md:col-span-5 group relative aspect-[3/4] overflow-hidden cursor-pointer bg-secondary text-left"
+          >
+            <video
+              src={greenCurtainVideo.url}
+              poster={greenCurtainPoster.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-end p-4">
+              <span className="font-sans text-xs uppercase tracking-wider text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Expand Video
+              </span>
+            </div>
+          </button>
+
+          <div className="md:col-span-7 md:pl-4">
+            <p className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+              In Motion
+            </p>
+            <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
+              Double-Height Sheer Drapery
+            </h3>
+            <p className="font-sans text-base text-muted-foreground leading-relaxed max-w-md">
+              Tailored to span full architectural heights, our lightweight emerald sheers move effortlessly with the breeze while filtering natural daylight across the room.
+            </p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {projects.map((p, i) => (
             <button
               key={i}
-              onClick={() => setLightbox(i)}
+              type="button"
+              onClick={() => setLightbox({ type: "photo", index: i })}
               className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
             >
               <img
@@ -66,6 +108,7 @@ const PortfolioSection = () => {
           onClick={() => setLightbox(null)}
         >
           <button
+            type="button"
             onClick={() => setLightbox(null)}
             className="absolute top-6 right-6 text-primary-foreground/80 hover:text-primary-foreground"
             aria-label="Close"
@@ -73,14 +116,33 @@ const PortfolioSection = () => {
             <X size={28} />
           </button>
           <div className="flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={projects[lightbox].src}
-              alt={projects[lightbox].alt}
-              className="max-w-full max-h-[80vh] object-contain"
-            />
-            <p className="font-sans text-xs uppercase tracking-[0.2em] text-primary-foreground/80">
-              {projects[lightbox].label}
-            </p>
+            {lightbox.type === "video" ? (
+              <>
+                <video
+                  src={greenCurtainVideo.url}
+                  poster={greenCurtainPoster.url}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  className="max-w-full max-h-[80vh] object-contain"
+                />
+                <p className="font-sans text-xs uppercase tracking-[0.2em] text-primary-foreground/80">
+                  Double-Height Sheer Drapery
+                </p>
+              </>
+            ) : activePhoto ? (
+              <>
+                <img
+                  src={activePhoto.src}
+                  alt={activePhoto.alt}
+                  className="max-w-full max-h-[80vh] object-contain"
+                />
+                <p className="font-sans text-xs uppercase tracking-[0.2em] text-primary-foreground/80">
+                  {activePhoto.label}
+                </p>
+              </>
+            ) : null}
           </div>
         </div>
       )}
