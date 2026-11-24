@@ -1,19 +1,25 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import p1 from "@/assets/portfolio-1.jpg";
-import p2 from "@/assets/portfolio-2.jpg";
-import p3 from "@/assets/portfolio-3.jpg";
-import p4 from "@/assets/portfolio-4.jpg";
-import p5 from "@/assets/portfolio-5.jpg";
-import p6 from "@/assets/portfolio-6.jpg";
+import pleatedRoman from "@/assets/komach_pleated_roman.jpg.asset.json";
+import sheerWave from "@/assets/komach_sheer_wave.jpg.asset.json";
+import coastalRoller from "@/assets/komach_coastal_roller.jpg.asset.json";
+import panelTrack from "@/assets/komach_panel_track.jpg.asset.json";
+import zebraBlinds from "@/assets/komach_zebra_blinds.jpg.asset.json";
+import embroideredPelmet from "@/assets/komach_embroidered_pelmet.jpg.asset.json";
+import archedValance from "@/assets/komach_arched_valance.jpg.asset.json";
+import classicSwags from "@/assets/komach_classic_swags.jpg.asset.json";
+import portiereDrapes from "@/assets/komach_portiere_drapes.jpg.asset.json";
 
 const projects = [
-  { src: p1, alt: "Deep velvet curtains with elegant pleats", label: "Velvet Drapes · Beirut" },
-  { src: p2, alt: "Modern bedroom with sheer and blackout layers", label: "Sheer & Blackout · Jounieh" },
-  { src: p3, alt: "Classic golden curtains in a formal dining room", label: "Classic Swag · Byblos" },
-  { src: p4, alt: "Motorized curtains in a contemporary living room", label: "Motorized · Rabieh" },
-  { src: p5, alt: "Ornate traditional curtains in a Lebanese salon", label: "Traditional Salon · Zahle" },
-  { src: p6, alt: "Layered curtains in a master bedroom", label: "Layered Drapes · Batroun" },
+  { src: pleatedRoman.url, alt: "Floor-to-ceiling tailored pinch-pleat drapes paired with a matching Roman blind", label: "Pleated Drapes & Roman Blind" },
+  { src: sheerWave.url, alt: "Floor-to-ceiling sheer wave curtains with concealed warm cove lighting", label: "Sheer Wave Curtains" },
+  { src: coastalRoller.url, alt: "Architectural motorized blackout roller shade framing a coastal sea view", label: "Motorized Blackout Shade" },
+  { src: panelTrack.url, alt: "Sliding sheer panel track curtains paired with woven Roman blinds", label: "Panel Track & Woven Blinds" },
+  { src: zebraBlinds.url, alt: "Warm-toned day and night zebra blinds fitted across a corner window", label: "Day & Night Zebra Blinds" },
+  { src: embroideredPelmet.url, alt: "Custom velvet-trimmed embroidered pelmet over draped silk curtains", label: "Embroidered Pelmet & Silk Drapes" },
+  { src: archedValance.url, alt: "Hand-tailored damask valance with tassel trim fitted to a carved stone arch", label: "Arched Stone Window Drapery" },
+  { src: classicSwags.url, alt: "Full-wall classic swags, jabots, and fringed brocade salon drapery", label: "Classic Swag & Tailored Pleats" },
+  { src: portiereDrapes.url, alt: "Classical doorway portière drapes with bullion fringe under a gilded cornice", label: "Carved Cornice & Portière" },
 ];
 
 const PortfolioSection = () => {
@@ -66,11 +72,16 @@ const PortfolioSection = () => {
           >
             <X size={28} />
           </button>
-          <img
-            src={projects[lightbox].src}
-            alt={projects[lightbox].alt}
-            className="max-w-full max-h-[85vh] object-contain"
-          />
+          <div className="flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={projects[lightbox].src}
+              alt={projects[lightbox].alt}
+              className="max-w-full max-h-[80vh] object-contain"
+            />
+            <p className="font-sans text-xs uppercase tracking-[0.2em] text-primary-foreground/80">
+              {projects[lightbox].label}
+            </p>
+          </div>
         </div>
       )}
     </section>

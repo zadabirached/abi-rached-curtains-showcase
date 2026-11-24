@@ -1,17 +1,17 @@
-import heroImg from "@/assets/hero-curtains.jpg";
+import heroAsset from "@/assets/komach_hero_blinds.jpg.asset.json";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-[85vh] flex items-end">
       <div className="absolute inset-0">
         <img
-          src={heroImg}
-          alt="Elegant sheer curtains in a sunlit living room"
+          src={heroAsset.url}
+          alt="Dual-layer motorized roller blinds with warm cove lighting in a sunlit living room"
           width={1920}
-          height={1080}
+          height={1440}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/65 via-foreground/30 to-foreground/15" />
       </div>
 
       <div className="relative container mx-auto px-6 lg:px-8 pb-16 md:pb-24">
